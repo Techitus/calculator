@@ -1,0 +1,26 @@
+#h-text{
+    background-image: url("./assests/symbol.jpeg");
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.btn {
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    border: none;
+    border-radius: 1.1em;
+    background-color: #212121;
+    cursor: pointer;
+    padding: 1em 2em;
+    transition: box-shadow ease-in-out 0.3s, background-color ease-in-out 0.1s,
+      letter-spacing ease-in-out 0.1s, transform ease-in-out 0.1s;
+   ;
+  }
+  
+.btn:active {
+    box-shadow: var(--hover-shadows), var(--accent) 0px 0px 30px 5px;
+    transform: scale(0.95);
+  }
+  
