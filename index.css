@@ -24,3 +24,9 @@
     transform: scale(0.95);
   }
   
+  .wrapper{
+    border-radius: 37px;
+background: #241f31;
+box-shadow:  27px 27px 53px #0e0c14,
+             -27px -27px 53px #3a324e;
+  }

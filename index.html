@@ -7,35 +7,36 @@
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="p-0 m-0 flex items-center justify-between bg-gray-950">
-   <div class="wrapper bg-slate-950 px-2 h-auto items-center">
+<body class="p-0 m-0 flex items-center justify-between bg-slate-950">
+   <div class="wrapper bg-slate-950 px-4 h-auto items-center sm:ml-24 sm:mt-8 md:ml-44 md:mt-16 lg:overflow-hidden lg:ml-72 lg:px-4 xl:ml-[48rem] 2xl:mb-0 ">
     <div class="parent ">
-    <div class="textplace px-2 mt-3">
+    <div class="textplace px-4 mt-3">
         <h1 id="h-text" class="text-white text-center text-4xl font-mono tracking-wide m-5">Calculator</h1>
-        <textarea name="" id="txtarea" cols="42" rows="3" disabled ></textarea>
+        <textarea name="" id="txtarea" cols="39" rows="3" readonly class="2xl:text-lg" ></textarea>
         </div>
-        <div class="btn-section grid grid-cols-4 gap-12 pt-16 mx-3 pb-8 text-white">
-        <button type="button" id="AC"  class="btn bg-red-800 rounded-full px-3 py-3  my-2 hover:bg-red-950" >AC</button>
-        <button type="button" id="clr" class="btn bg-gray-500 rounded-full px-3 py-3 my-2 hover:bg-slate-800">Del</button>  
-        <button type="button" id="per" class="btn bg-gray-500 rounded-full px-3 py-3 my-2 hover:bg-slate-800">%</button>
-        <button type="button" id="div" class="btn bg-orange-500 rounded-full px-3 py-3 my-2 hover:bg-orange-800">÷</button>
-        <button type="button" id="dg-7"class="btn bg-gray-700 rounded-full px-3 py-3 my-2 hover:bg-slate-900">7</button>
-        <button type="button" id="dg-8"class="btn bg-gray-700 rounded-full px-3 py-3 my-2 hover:bg-slate-900">8</button>
-        <button type="button" id="dg-9"class="btn bg-gray-700 rounded-full px-3 py-3 my-2 hover:bg-slate-900">9</button>
-        <button type="button" id="mul"class="btn  bg-orange-500 rounded-full px-3 py-3 my-2 hover:bg-orange-800">X</button>
-        <button type="button" id="dg-4"class="btn bg-gray-700 rounded-full px-3 py-3 my-2 hover:bg-slate-900">4</button>
-        <button type="button" id="dg-5"class="btn bg-gray-700 rounded-full px-3 py-3 my-2 hover:bg-slate-900">5</button>
-        <button type="button" id="dg-6"class="btn bg-gray-700 rounded-full px-3 py-3 my-2 hover:bg-slate-900">6</button>
-        <button type="button" id="subs"class="btn bg-orange-500 rounded-full px-3 py-3 my-2 hover:bg-orange-800">−</button>
-        <button type="button" id="dg-1"class="btn bg-gray-700 rounded-full px-3 py-3 my-2 hover:bg-slate-900">1</button>
-        <button type="button" id="dg-2"class="btn bg-gray-700 rounded-full px-3 py-3 my-2 hover:bg-slate-900">2</button>
-        <button type="button" id="dg-3"class="btn bg-gray-700 rounded-full px-3 py-3 my-2 hover:bg-slate-900">3</button>
-        <button type="button" id="plus"class="btn bg-orange-500 rounded-full px-3 py-3 my-2 hover:bg-orange-800">+</button>
-        <button type="button" id="dg-0"class="btn col-span-2 bg-gray-700 px-3 py-3 my-2 rounded-2xlhover:bg-slate-900">0</button>
-        <button type="button" id="deci"class="btn bg-gray-700  rounded-full px-3 py-3 my-2 hover:bg-slate-900">.</button>
-        <button type="button" id="equal"class="btn bg-orange-500 rounded-full  px-3 py-3 my-2 hover:bg-orange-800">=</button>
+        <div id="button" class="btn-section grid grid-cols-4 gap-12 pt-12 mx-3 pb-8 text-white overflow-hidden">
+        <button type="button" id="AC"  class="btn bg-red-800 rounded-full px-3 py-3  my-2 hover:bg-red-950"onclick="Clear()">AC</button>
+        <button type="button" id="clr" class="btn bg-gray-500 rounded-full px-3 py-3 my-2 hover:bg-slate-800" onclick="Delete()" >Del</button>  
+        <button type="button" id="per" class="btn bg-gray-500 rounded-full px-3 py-3 my-2 hover:bg-slate-800" onclick="Display('%')">%</button>
+        <button type="button" id="div" class="btn bg-orange-500 rounded-full px-3 py-3 my-2 hover:bg-orange-800"onclick="Display('/')">÷</button>
+        <button type="button" id="dg-7"class="btn bg-gray-700 rounded-full px-3 py-3 my-2 hover:bg-slate-900"onclick="Display('7')">7</button>
+        <button type="button" id="dg-8"class="btn bg-gray-700 rounded-full px-3 py-3 my-2 hover:bg-slate-900"onclick="Display('8')">8</button>
+        <button type="button" id="dg-9"class="btn bg-gray-700 rounded-full px-3 py-3 my-2 hover:bg-slate-900"onclick="Display('9')">9</button>
+        <button type="button" id="mul"class="btn  bg-orange-500 rounded-full px-3 py-3 my-2 hover:bg-orange-800"onclick="Display('*')">X</button>
+        <button type="button" id="dg-4"class="btn bg-gray-700 rounded-full px-3 py-3 my-2 hover:bg-slate-900"onclick="Display('4')">4</button>
+        <button type="button" id="dg-5"class="btn bg-gray-700 rounded-full px-3 py-3 my-2 hover:bg-slate-900"onclick="Display('5')">5</button>
+        <button type="button" id="dg-6"class="btn bg-gray-700 rounded-full px-3 py-3 my-2 hover:bg-slate-900"onclick="Display('6')">6</button>
+        <button type="button" id="subs"class="btn bg-orange-500 rounded-full px-3 py-3 my-2 hover:bg-orange-800"onclick="Display('-')">−</button>
+        <button type="button" id="dg-1"class="btn bg-gray-700 rounded-full px-3 py-3 my-2 hover:bg-slate-900"onclick="Display('1')">1</button>
+        <button type="button" id="dg-2"class="btn bg-gray-700 rounded-full px-3 py-3 my-2 hover:bg-slate-900"onclick="Display('2')">2</button>
+        <button type="button" id="dg-3"class="btn bg-gray-700 rounded-full px-3 py-3 my-2 hover:bg-slate-900"onclick="Display('3')">3</button>
+        <button type="button" id="plus"class="btn bg-orange-500 rounded-full px-3 py-3 my-2 hover:bg-orange-800"onclick="Display('+')">+</button>
+        <button type="button" id="dg-0"class="btn col-span-2 bg-gray-700 px-3 py-3 my-2 rounded-2xlhover:bg-slate-900"onclick="Display('0')">0</button>
+        <button type="button" id="deci"class="btn bg-gray-700  rounded-full px-3 py-3 my-2 hover:bg-slate-900"onclick="Display('.')">.</button>
+        <button type="button" id="equal"class="btn bg-orange-500 rounded-full  px-3 py-3 my-2 hover:bg-orange-800"onclick="Calculate()">=</button>
     </div>
 </div>
    </div>
+   <script src="script.js"></script>
 </body>
 </html>
